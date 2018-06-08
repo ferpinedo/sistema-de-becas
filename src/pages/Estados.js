@@ -6,7 +6,6 @@ import {push} from '../utils/MongoUploader'
 
 import {TableWrapper} from '../components/TableWrapper'
 import {StringInput} from '../components/StringInput'
-import {DatePicker} from '../components/DatePicker'
 
 // Bootstrap
 import { Button } from 'reactstrap';
@@ -130,7 +129,6 @@ class Form extends React.Component{
                         <StringInput name={"nombre"} label={"Nombre"} validation={validation} onChange={this.handleInputChange}/>
                         {/*TODO: hacer selectable list*/}
                         <StringInput name={"clave"} label={"Clave"} validation={validation} onChange={this.handleInputChange}/>
-                        <DatePicker name="fechaInicio" label="Fecha de Inicio" validation={validation} onChange={this.handleInputChange}/>
                         <Button color="dark" onClick={this.handleFormSubmit} className="button">
                             Finalizar
                         </Button>

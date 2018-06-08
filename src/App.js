@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+// import {StickyContainer, Sticky} from 'react-sticky';
 
 // reactstrap
 import {
@@ -14,6 +15,9 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+
+import {StickyContainer, Sticky} from 'react-sticky';
+import {Appbar, Container, Panel} from 'muicss/react';
 
 // Views
 import Becas from "./pages/Becas";
@@ -54,48 +58,65 @@ export class App extends Component {
     render() {
         return (
             <div>
-                <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href="/"><h1>Sistema de becas</h1></NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink  href="#becas" onClick={()=> this.changeView(Becas)}> Becas </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink  href="#alumnos"onClick={()=> this.changeView(Alumnos)} > Alumnos </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink  href="#tiposBecas" onClick={()=> this.changeView(TipoBecas)}> Tipos de becas </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink  href="#especialidades" onClick={()=> this.changeView(Especialidades)}> Especialidades </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink  href="#instituciones" onClick={()=> this.changeView(Instituciones)}> Instituciones </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink  href="#estados" onClick={()=> this.changeView(Estados)}> Estados </NavLink>
-                            </NavItem>
+                <StickyContainer>
+                    <Sticky>
+                        {({style, isSticky}) =>
+                            <div className='App-bar-sticky' style={style}>
+                                <Navbar color="dark" dark expand="md">
+                                    <NavbarBrand href="/"><h1>Sistema de becas</h1></NavbarBrand>
+                                    <NavbarToggler onClick={this.toggle} />
+                                    <Collapse isOpen={this.state.isOpen} navbar>
+                                        <Nav className="ml-auto" navbar>
+                                            <NavItem>
+                                                <NavLink  href="#becas" onClick={()=> this.changeView(Becas)}> Becas </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink  href="#alumnos"onClick={()=> this.changeView(Alumnos)} > Alumnos </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink  href="#tiposBecas" onClick={()=> this.changeView(TipoBecas)}> Tipos de becas </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink  href="#especialidades" onClick={()=> this.changeView(Especialidades)}> Especialidades </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink  href="#instituciones" onClick={()=> this.changeView(Instituciones)}> Instituciones </NavLink>
+                                            </NavItem>
+                                            <NavItem>
+                                                <NavLink  href="#estados" onClick={()=> this.changeView(Estados)}> Estados </NavLink>
+                                            </NavItem>
 
-                        </Nav>
-                        <Nav>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Cuenta
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>Ajustes</DropdownItem>
-                                    <DropdownItem>Más información</DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>Cerrar sesión</DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
-                        </Nav>
-                    </Collapse>
-                </Navbar>
+                                        </Nav>
+                                        <Nav>
+                                            <UncontrolledDropdown nav inNavbar>
+                                                <DropdownToggle nav caret>
+                                                    Cuenta
+                                                </DropdownToggle>
+                                                <DropdownMenu right>
+                                                    <DropdownItem>Ajustes</DropdownItem>
+                                                    <DropdownItem>Más información</DropdownItem>
+                                                    <DropdownItem divider />
+                                                    <DropdownItem>Cerrar sesión</DropdownItem>
+                                                </DropdownMenu>
+                                            </UncontrolledDropdown>
+                                        </Nav>
+                                    </Collapse>
+                                </Navbar>
+                            </div>
+                        }
+                    </Sticky>
+                    <Container style={{paddingTop: 50}}>
+                        <Panel className="container">
+                            <this.state.currentView/>
+                        </Panel>
+                    </Container>
+                </StickyContainer>
+                <Appbar className='App-bar'>
+                    <p className='footer'>Desarrollado por Fernando Josué Pinedo Orta y supervisado por Jorge Arturo Zapata Reyna</p>
+                </Appbar>
 
-                <this.state.currentView/>
+
+
 
             </div>
         );

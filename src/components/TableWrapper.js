@@ -79,8 +79,8 @@ export class TableWrapper extends React.Component{
 
     handleButtonClick(row)
     {
-        console.log("clicked!: " + row)
-        drop(this.props.url, row)
+        console.log("clicked!: " + row);
+        drop(this.props.url, row);
     }
 
     render(){

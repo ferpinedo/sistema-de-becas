@@ -5,17 +5,15 @@ import {getValidator} from '../utils/Validations'
 import {push} from '../utils/MongoUploader'
 
 import {TableWrapper} from '../components/TableWrapper'
-import {DatePicker} from '../components/DatePicker'
+
+// Daate picker
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
 // Bootstrap
 import {Button} from 'reactstrap';
 import "tabler-react/dist/Tabler.css";
 import {Card} from "tabler-react";
-
-// Tablas
-import ReactTable from "react-table";
-// import 'react-table/react-table.css'
-import matchSorter from 'match-sorter'
 
 // Data Picker
 import 'react-datepicker/dist/react-datepicker.css';
@@ -29,8 +27,6 @@ class Becas extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            startDate: moment(),
-            endDate: null,
             addingItem: false
         };
         becasThat = this;
@@ -68,18 +64,6 @@ class Becas extends React.Component{
             addingBeca: !this.state.addingBeca
         }, ()=>{
             window.scrollTo(0,document.body.scrollHeight);
-        });
-    }
-
-    handleChangeStart(date) {
-        this.setState({
-            startDate: date
-        });
-    }
-
-    handleChangeEnd(date) {
-        this.setState({
-            endDate: date
         });
     }
 
@@ -125,8 +109,8 @@ class Form extends React.Component{
        let fields = {
            numControl: '',
            claveBeca: '',
-           fechaInicio: '00/00/00',
-           fechaVencimiento: '00/00/00',
+           fechaInicio: moment(),
+           fechaVencimiento: moment(),
            estatus: ''
        };
        this.validator = getValidator(fields);
@@ -137,6 +121,8 @@ class Form extends React.Component{
 
        this.state = fields;
        this.submittedOnce = false;
+       this.handleEndDateChange = this.handleEndDateChange.bind(this);
+       this.handleStartDateChange = this.handleStartDateChange.bind(this);
 
     }
 
@@ -168,6 +154,17 @@ class Form extends React.Component{
             });
         }
     };
+    handleStartDateChange(date) {
+        this.setState({
+            fechaInicio: date
+        });
+    }
+
+    handleEndDateChange(date) {
+        this.setState({
+            fechaVencimiento: date
+        });
+    }
 
     render(){
 
@@ -202,19 +199,27 @@ class Form extends React.Component{
                                 <span className="help-block">{validation.claveBeca.message}</span>
                             </div>
 
-                            {/*<DatePicker name="fechaInicio" label="Fecha de Inicio" validation={validation} onChange={this.handleInputChange}/>*/}
 
+                            <div className="columns">
+                                <div className="column">
+                                        <label htmlFor = "fechaInicio" >Fecha de Inicio</label>
+                                        <DatePicker
+                                            className='date-input'
+                                            selected={this.state.fechaInicio}
+                                            onChange={this.handleStartDateChange}
+                                        />
+                                </div>
+                                <div className="sndColumn">
+                                    <label htmlFor = "fechaVencimiento" >Fecha de Vencimiento</label>
+                                    <DatePicker
+                                        className='date-input'
+                                        selected={this.state.fechaVencimiento}
+                                        onChange={this.handleEndDateChange()}
+                                    />
+                                </div>
 
-
-                            <div className={validation.fechaVencimiento.isInvalid && 'has-error'}>
-                                <label htmlFor="fechaVencimiento">Fecha de vencimiento</label>
-                                <input type="fechaVencimiento" className="form-control"
-                                       name="fechaVencimiento"
-                                       placeholder=""
-                                       onChange={this.handleInputChange}
-                                />
-                                <span className="help-block">{validation.fechaVencimiento.message}</span>
                             </div>
+
 
                             <div className={validation.estatus.isInvalid && 'has-error'}>
                                 <label htmlFor="estatus">Estatus</label>
