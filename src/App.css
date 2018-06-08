@@ -8,11 +8,7 @@
   padding: 20px;
   color: white;
 }
-.App-bar {
-  padding: 10% 0;
-  z-index: 5 !important;
-  float: bottom;
-}
+
 
 .App-title {
   font-size: 1.5em;

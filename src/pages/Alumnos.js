@@ -182,12 +182,11 @@ class Form extends React.Component{
                                 <ControlLabel>Especialidad</ControlLabel>
                                 <FormControl componentClass="select" placeholder={"0"}>
                                     <option value="9"> Industrial</option>
-                                    <option value="8"> Materiales</option>
-                                    <option value="7"> Gestión Empresarial</option>
+                                    <option value="5"> Gestión Empresarial</option>
                                     <option value="6"> Eléctrica</option>
-                                    <option value="5"> Mecánica</option>
-                                    <option value="4"> Materiales</option>
-                                    <option value="3"> Electrónica</option>
+                                    <option value="7"> Mecánica</option>
+                                    <option value="3"> Materiales</option>
+                                    <option value="8"> Electrónica</option>
                                     <option value="2"> Mecatrónica</option>
                                     <option value="1"> Sistemas</option>
                                 </FormControl>

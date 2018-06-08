@@ -5,6 +5,7 @@ import {getValidator} from '../utils/Validations'
 import {push} from '../utils/MongoUploader'
 
 import {TableWrapper} from '../components/TableWrapper'
+import {StringInput} from '../components/StringInput'
 
 // Daate picker
 import DatePicker from "react-datepicker";
@@ -111,7 +112,7 @@ class Form extends React.Component{
            claveBeca: '',
            fechaInicio: moment(),
            fechaVencimiento: moment(),
-           estatus: ''
+           estatus: 0
        };
        this.validator = getValidator(fields);
        console.log("This.validator: " + JSON.stringify(this.validator));
@@ -209,15 +210,15 @@ class Form extends React.Component{
                                             onChange={this.handleStartDateChange}
                                         />
                                 </div>
-                                <div className="sndColumn">
-                                    <label htmlFor = "fechaVencimiento" >Fecha de Vencimiento</label>
-                                    <DatePicker
-                                        className='date-input'
-                                        selected={this.state.fechaVencimiento}
-                                        onChange={this.handleEndDateChange()}
-                                    />
-                                </div>
 
+                            </div>
+                            <div>
+                                    <label htmlFor="fechaVencimiento">Fecha de Vencimiento</label>
+                                    <input type="fechaVencimiento" className="form-control"
+                                           name="fechaVencimiento"
+                                           placeholder=""
+                                           onChange={this.handleInputChange}
+                                    />
                             </div>
 
 
