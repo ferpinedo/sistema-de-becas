@@ -1,0 +1,32 @@
+{
+  "name": "sistema-becas",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "match-sorter": "^2.2.3",
+    "moment": "latest",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-admin": "^2.0.2",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-table": "^4.3.1",
+    "react-datepicker": "^1.5.0",
+    "react-dates": "^16.7.0",
+    "react-dates-range-picker": "^0.1.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4",
+    "react-table": "^6.8.6",
+    "reactstrap": "^6.1.0",
+    "tabler-react": "^1.9.0",
+    "validator": "^10.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

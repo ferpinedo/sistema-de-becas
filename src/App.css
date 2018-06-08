@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Becas{
+  padding: 0 1%;
+}
+
+.form{
+  padding: 1% 20% 1%;
+}
+
+.rightBtn{
+  padding: 1% 20% 1%;
+  float: right;
+}
+
+.button{
+  font-size: medium;
+}
+
+#column{
+  display: inline-block;
+}
+
+.table{
+  padding: 0% 20% 0%;
+}
+
+.demoForm {
+  width: 500px;
+  margin: auto;
+}
+
+.CalendarDay__highlighted_calendar {
+  background: #82E0AA;
+  color: #186A3B;
+}
+
+.CalendarDay__highlighted_calendar:hover {
+  background: #58D68D;
+  color: #186A3B;
+}
+
+.CalendarDay__highlighted_calendar:active {
+  background: #58D68D;
+  color: #186A3B;
+}
+
+.navbar{
+  font-size: 30px;
+}
+
+.navBar{
+  background: #222222;
+}
+
+* {
+  font-size:  14px;
+}
+
