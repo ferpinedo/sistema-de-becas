@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 
 
 export function drop(url, object)
@@ -14,6 +14,7 @@ export function drop(url, object)
         //     method: 'DELETE',
         //     body: object
         // }).then(response => response.json());
+    axios.delete(url+"/" + object["_original"]._id);
 
     return fetch(request).then(response => response.json());
 

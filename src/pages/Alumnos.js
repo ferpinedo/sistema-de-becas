@@ -11,6 +11,7 @@ import {StringInput} from '../components/StringInput'
 import {Button} from 'reactstrap';
 import "tabler-react/dist/Tabler.css";
 import {Card} from "tabler-react";
+import {ControlLabel, FormControl, FormGroup} from "react-bootstrap";
 
 const URL = apiURLs.ALUMNOS;
 var alumnosThat = null;
@@ -177,6 +178,20 @@ class Form extends React.Component{
                             <StringInput name={"apellidoPaterno"} label={"Apellido paterno"} validation={validation} onChange={this.handleInputChange}/>
                             <StringInput name={"apellidoMaterno"} label={"Apellido Materno"} validation={validation} onChange={this.handleInputChange}/>
                             <StringInput name={"especialidad"} label={"Especialidad"} validation={validation} onChange={this.handleInputChange}/>
+                            <FormGroup controlId="formControlsSelect">
+                                <ControlLabel>Especialidad</ControlLabel>
+                                <FormControl componentClass="select" placeholder={"0"}>
+                                    <option value="9"> Industrial</option>
+                                    <option value="8"> Materiales</option>
+                                    <option value="7"> Gestión Empresarial</option>
+                                    <option value="6"> Eléctrica</option>
+                                    <option value="5"> Mecánica</option>
+                                    <option value="4"> Materiales</option>
+                                    <option value="3"> Electrónica</option>
+                                    <option value="2"> Mecatrónica</option>
+                                    <option value="1"> Sistemas</option>
+                                </FormControl>
+                            </FormGroup>
                             <StringInput name={"fechaNacimiento"} label={"Fecha de Nacimiento"} validation={validation} onChange={this.handleInputChange}/>
                             <StringInput name={"correo"} label={"Correo"} validation={validation} onChange={this.handleInputChange}/>
                             <StringInput name={"telefono"} label={"Telefóno"} validation={validation} onChange={this.handleInputChange}/>

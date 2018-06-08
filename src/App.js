@@ -58,10 +58,6 @@ export class App extends Component {
     render() {
         return (
             <div>
-                <StickyContainer>
-                    <Sticky>
-                        {({style, isSticky}) =>
-                            <div className='App-bar-sticky' style={style}>
                                 <Navbar color="dark" dark expand="md">
                                     <NavbarBrand href="/"><h1>Sistema de becas</h1></NavbarBrand>
                                     <NavbarToggler onClick={this.toggle} />
@@ -102,17 +98,15 @@ export class App extends Component {
                                         </Nav>
                                     </Collapse>
                                 </Navbar>
-                            </div>
-                        }
-                    </Sticky>
-                    <Container style={{paddingTop: 50}}>
+
+
+
                         <Panel className="container">
                             <this.state.currentView/>
                         </Panel>
-                    </Container>
-                </StickyContainer>
+
                 <Appbar className='App-bar'>
-                    <p className='footer'>Desarrollado por Fernando Josué Pinedo Orta y supervisado por Jorge Arturo Zapata Reyna</p>
+                    <p className='footer'><t/>        Desarrollado por Fernando Josué Pinedo Orta y supervisado por Jorge Arturo Zapata Reyna</p>
                 </Appbar>
 
 
