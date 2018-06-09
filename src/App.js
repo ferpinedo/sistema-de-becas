@@ -17,7 +17,7 @@ import {
     DropdownItem } from 'reactstrap';
 
 import {StickyContainer, Sticky} from 'react-sticky';
-import {Appbar, Container, Panel} from 'muicss/react';
+import {Appbar, Panel} from 'muicss/react';
 
 // Views
 import Becas from "./pages/Becas";
@@ -58,66 +58,62 @@ export class App extends Component {
     render() {
         return (
             <div>
-                                <Navbar color="dark" dark expand="md">
-                                    <NavbarBrand href="/"><h1>Sistema de becas</h1></NavbarBrand>
-                                    <NavbarToggler onClick={this.toggle} />
-                                    <Collapse isOpen={this.state.isOpen} navbar>
-                                        <Nav className="ml-auto" navbar>
-                                            <NavItem>
-                                                <NavLink  href="#becas" onClick={()=> this.changeView(Becas)}> Becas </NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink  href="#alumnos"onClick={()=> this.changeView(Alumnos)} > Alumnos </NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink  href="#tiposBecas" onClick={()=> this.changeView(TipoBecas)}> Tipos de becas </NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink  href="#especialidades" onClick={()=> this.changeView(Especialidades)}> Especialidades </NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink  href="#instituciones" onClick={()=> this.changeView(Instituciones)}> Instituciones </NavLink>
-                                            </NavItem>
-                                            <NavItem>
-                                                <NavLink  href="#estados" onClick={()=> this.changeView(Estados)}> Estados </NavLink>
-                                            </NavItem>
+                <Navbar color="dark" dark expand="md">
+                    <NavbarBrand href="/"><h2>Sistema de becas</h2></NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink  href="#becas" onClick={()=> this.changeView(Becas)}> Becas </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink  href="#alumnos"onClick={()=> this.changeView(Alumnos)} > Alumnos </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink  href="#tiposBecas" onClick={()=> this.changeView(TipoBecas)}> Tipos de becas </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink  href="#especialidades" onClick={()=> this.changeView(Especialidades)}> Especialidades </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink  href="#instituciones" onClick={()=> this.changeView(Instituciones)}> Instituciones </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink  href="#estados" onClick={()=> this.changeView(Estados)}> Estados </NavLink>
+                            </NavItem>
 
-                                        </Nav>
-                                        <Nav>
-                                            <UncontrolledDropdown nav inNavbar>
-                                                <DropdownToggle nav caret>
-                                                    Cuenta
-                                                </DropdownToggle>
-                                                <DropdownMenu right>
-                                                    <DropdownItem>Ajustes</DropdownItem>
-                                                    <DropdownItem>Más información</DropdownItem>
-                                                    <DropdownItem divider />
-                                                    <DropdownItem>Cerrar sesión</DropdownItem>
-                                                </DropdownMenu>
-                                            </UncontrolledDropdown>
-                                        </Nav>
-                                    </Collapse>
-                                </Navbar>
+                        </Nav>
+                        <Nav>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    Cuenta
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <DropdownItem>Ajustes</DropdownItem>
+                                    <DropdownItem>Más información</DropdownItem>
+                                    <DropdownItem divider />
+                                    <DropdownItem>Cerrar sesión</DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
 
+                <Panel className="container">
+                    <this.state.currentView/>
+                </Panel>
 
-
-                        <Panel className="container">
-                            <this.state.currentView/>
-                        </Panel>
-
-                <Appbar className='App-bar'>
-                    <p className='footer'><t/>        Desarrollado por Fernando Josué Pinedo Orta y supervisado por Jorge Arturo Zapata Reyna</p>
-                </Appbar>
-
-
-
-
+                <footer className="navbar-fixed-bottom">
+                    <Appbar>
+                        <p className='footer footer-text'>
+                                <a className="footer-text" href="http://github.com/pinedo98/sistema-de-becas">
+                                    Desarrollado por Fernando J. Pinedo
+                                </a>
+                        </p>
+                    </Appbar>
+                </footer>
             </div>
         );
     }
 }
 
-/*
-
-
- */
