@@ -34,7 +34,8 @@ export class TableWrapper extends React.Component{
                         tableData: json,
                         dataLoaded: true
                     });
-                    console.log("State: " + JSON.stringify(self.state))
+                    console.log("State: " + JSON.stringify(self.state));
+                    console.log("Finished refreshing table");
                 });
                 return results;
             });
@@ -50,12 +51,10 @@ export class TableWrapper extends React.Component{
         }
 
         Object.keys(self.state.tableData[0]).forEach(key => {
-            console.log("KEY: "+ key);
             if (self.props.columnsData[key] === undefined){
                 console.log("Is undefined")
                 return;
             }
-
                 columns.push({
                     Header: self.props.columnsData[key].name,
                     accessor: key,
@@ -68,11 +67,11 @@ export class TableWrapper extends React.Component{
 
         columns.push({
             header: '',
-            id: 'click-me-button',
-            width: 80,
+            id: 'delete-button',
+            width: 90,
             alignContent: "center",
-            Cell:({ row }) => (<Button color="warning" onClick={() => this.handleButtonClick(row)}>Delete</Button>)
-        })
+            Cell:({ row }) => (<Button color="warning" onClick={() => this.handleButtonClick(row)}>Eliminar</Button>)
+        });
 
         return columns;
     }
@@ -80,7 +79,7 @@ export class TableWrapper extends React.Component{
     handleButtonClick(row)
     {
         console.log("clicked!: " + row);
-        drop(this.props.url, row);
+        drop(this.props.url, row, this.refreshTable);
     }
 
     render(){
@@ -112,7 +111,7 @@ export class TableWrapper extends React.Component{
 
             return(
                 <div className="table">
-                    <h5>.</h5>
+                    <h2>{this.props.name}</h2>
                 </div>
             );
         }
