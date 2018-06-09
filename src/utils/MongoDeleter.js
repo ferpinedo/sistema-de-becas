@@ -1,21 +1,14 @@
-import axios from 'axios';
 
-
-export function drop(url, object)
+export function drop(url, object, deleteCallback)
 {
-    console.log("Row: " + JSON.stringify(object))
-    console.log("Row: " + object["_original"]._id)
-    let request = new Request(url+"/" + object["_original"]._id, {
-        method: 'DELETE',
-        cache: 'no-cache',
-        mode:'cors'
+    url = url+"/" + object["_original"]._id;
+    console.log("Row: " + JSON.stringify(object));
+    console.log("Row: " + object["_original"]._id);
+    let request = new Request(url, {
+        method: 'DELETE'
     });
-        // return fetch(url+"/" + object["_original"]._id, {
-        //     method: 'DELETE',
-        //     body: object
-        // }).then(response => response.json());
-    axios.delete(url+"/" + object["_original"]._id);
-
-    return fetch(request).then(response => response.json());
-
+    return fetch(request).then(response => {
+        console.log("Response: " + response.toString());
+        deleteCallback();
+    });
 }
