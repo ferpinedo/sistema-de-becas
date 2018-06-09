@@ -1,5 +1,6 @@
 
 const apiURL = "https://sistema-becas-api.herokuapp.com";
+// const apiURL = "http://localhost:5656";
 
 export const apiURLs = {
     BECAS: apiURL + "/becas",
