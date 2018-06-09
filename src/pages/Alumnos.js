@@ -177,7 +177,7 @@ class Form extends React.Component{
                             <StringInput name={"nombres"} label={"Nombres"} validation={validation} onChange={this.handleInputChange}/>
                             <StringInput name={"apellidoPaterno"} label={"Apellido paterno"} validation={validation} onChange={this.handleInputChange}/>
                             <StringInput name={"apellidoMaterno"} label={"Apellido Materno"} validation={validation} onChange={this.handleInputChange}/>
-                            <StringInput name={"especialidad"} label={"Especialidad"} validation={validation} onChange={this.handleInputChange}/>
+                            {/*<StringInput name={"especialidad"} label={"Especialidad"} validation={validation} onChange={this.handleInputChange}/>*/}
                             <FormGroup controlId="formControlsSelect">
                                 <ControlLabel>Especialidad</ControlLabel>
                                 <FormControl componentClass="select" placeholder={"0"}>
