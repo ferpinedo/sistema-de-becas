@@ -16,7 +16,6 @@ import {
     DropdownMenu,
     DropdownItem } from 'reactstrap';
 
-import {StickyContainer, Sticky} from 'react-sticky';
 import {Appbar, Panel} from 'muicss/react';
 
 // Views

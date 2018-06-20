@@ -5,7 +5,6 @@ import {getValidator} from '../utils/Validations'
 import {push} from '../utils/MongoUploader'
 
 import {TableWrapper} from '../components/TableWrapper'
-import {StringInput} from '../components/StringInput'
 
 // Daate picker
 import DatePicker from "react-datepicker";
